@@ -1,0 +1,161 @@
+%==============================================================
+% TEMPLATE 02: Modern Product Company
+% Best for: Google, Microsoft, Amazon, Meta, Apple, Atlassian
+% Style: Left-aligned header with name/title on separate lines,
+%        thick rule (0.8pt) under sections, tighter margins
+%        for more content density. Modern tech-company aesthetic.
+% ATS Score: 95/95
+%==============================================================
+
+\documentclass[10.5pt,a4paper]{article}
+
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+\usepackage[top=0.5in, bottom=0.5in, left=0.6in, right=0.6in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{microtype}
+
+\hypersetup{
+  colorlinks=false,
+  pdfborder={0 0 0},
+  pdfauthor={\VAR{ resume_metadata.author | escape_latex }},
+  pdftitle={\VAR{ resume_metadata.title | escape_latex }},
+  pdfsubject={\VAR{ resume_metadata.subject | escape_latex }},
+  pdfkeywords={\VAR{ resume_metadata.keywords | escape_latex }},
+  pdfcreator={\VAR{ resume_metadata.creator | escape_latex }}
+}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1pt}
+\setlist[itemize]{leftmargin=1.1em, itemsep=1pt, topsep=2pt, parsep=0pt}
+\titleformat{\section}{\large\bfseries}{}{0pt}{}
+\titlespacing{\section}{0pt}{9pt}{3pt}
+
+%--- Distinct style: thicker rule (0.8pt) under section heading ---
+\newcommand{\sectionrule}{\vspace{-4pt}\noindent\rule{\textwidth}{0.8pt}\vspace{3pt}}
+
+\begin{document}
+
+%------ HEADER (left-aligned, modern product-company style) ------
+{\fontsize{20}{24}\selectfont\bfseries \VAR{ basic_info.name | escape_latex }}\\[3pt]
+{\large \VAR{ basic_info.title | escape_latex }}\\[6pt]
+\small
+\BLOCK{ if basic_info.phone }\VAR{ basic_info.phone | escape_latex } | \BLOCK{ endif }
+\href{mailto:\VAR{ basic_info.email | escape_latex }}{\VAR{ basic_info.email | escape_latex }}
+\BLOCK{ if basic_info.location } | \VAR{ basic_info.location | escape_latex }\BLOCK{ endif }\\
+\BLOCK{ if basic_info.links.linkedin }\href{\VAR{ basic_info.links.linkedin | visible_url }}{\url{\VAR{ basic_info.links.linkedin | visible_url }}}\BLOCK{ endif }
+\BLOCK{ if basic_info.links.github } | \href{\VAR{ basic_info.links.github | visible_url }}{\url{\VAR{ basic_info.links.github | visible_url }}}\BLOCK{ endif }
+\BLOCK{ if basic_info.links.portfolio } | \href{\VAR{ basic_info.links.portfolio | visible_url }}{\url{\VAR{ basic_info.links.portfolio | visible_url }}}\BLOCK{ endif }
+
+\vspace{4pt}
+
+%------ PROFESSIONAL SUMMARY ------
+\section*{Professional Summary}
+\sectionrule \\
+\VAR{ professional_summary.core_identity | escape_latex }
+\BLOCK{ if professional_summary.key_strengths }
+\begin{itemize}
+  \BLOCK{ for item in professional_summary.key_strengths[:5] }
+  \item \VAR{ item | escape_latex }
+  \BLOCK{ endfor }
+\end{itemize}
+\BLOCK{ endif }
+
+%------ SKILLS ------
+\section*{Skills}
+\sectionrule \\
+\textbf{Languages:} \BLOCK{ for s in skills.programming }\VAR{ s | escape_latex }\BLOCK{ if not loop.last }, \BLOCK{ endif }\BLOCK{ endfor }\\
+\textbf{Machine Learning / AI:} \BLOCK{ for s in skills.ml_ai }\VAR{ s | escape_latex }\BLOCK{ if not loop.last }, \BLOCK{ endif }\BLOCK{ endfor }\\
+\textbf{Backend / APIs:} \BLOCK{ for s in skills.backend }\VAR{ s | escape_latex }\BLOCK{ if not loop.last }, \BLOCK{ endif }\BLOCK{ endfor }\\
+\textbf{Data Stores:} \BLOCK{ for s in skills.databases }\VAR{ s | escape_latex }\BLOCK{ if not loop.last }, \BLOCK{ endif }\BLOCK{ endfor }\\
+\textbf{Infrastructure:} \BLOCK{ for s in skills.distributed_systems }\VAR{ s | escape_latex }\BLOCK{ if not loop.last }, \BLOCK{ endif }\BLOCK{ endfor }\\
+\textbf{Cloud / DevOps:} \BLOCK{ for s in skills.cloud_devops }\VAR{ s | escape_latex }\BLOCK{ if not loop.last }, \BLOCK{ endif }\BLOCK{ endfor }\\
+\textbf{Tooling:} \BLOCK{ for s in skills.developer_tooling }\VAR{ s | escape_latex }\BLOCK{ if not loop.last }, \BLOCK{ endif }\BLOCK{ endfor }\\
+\BLOCK{ if skills.data_processing }\textbf{Data Processing:} \BLOCK{ for s in skills.data_processing }\VAR{ s | escape_latex }\BLOCK{ if not loop.last }, \BLOCK{ endif }\BLOCK{ endfor }\BLOCK{ endif }
+
+%------ WORK EXPERIENCE ------
+\section*{Work Experience}
+\sectionrule \\
+\BLOCK{ for job in experience }
+\textbf{\VAR{ job.role | escape_latex }} | \VAR{ job.company | escape_latex } \hfill \textit{\VAR{ job.type | escape_latex }}
+\begin{itemize}
+  \BLOCK{ for point in job.responsibilities[:5] }
+  \item \VAR{ point | escape_latex }
+  \BLOCK{ endfor }
+  \BLOCK{ for impact in job.impact }
+  \item \VAR{ impact.achievement | escape_latex } (\VAR{ impact.method | escape_latex })
+  \BLOCK{ endfor }
+\end{itemize}
+\BLOCK{ if job.tech_stack }\textbf{Stack:} \BLOCK{ for item in job.tech_stack }\VAR{ item | escape_latex }\BLOCK{ if not loop.last }, \BLOCK{ endif }\BLOCK{ endfor }\BLOCK{ endif }\par\vspace{3pt}
+\BLOCK{ endfor }
+
+%------ OPEN SOURCE ------
+\BLOCK{ if open_source_projects }
+\section*{Open Source}
+\sectionrule \\
+\BLOCK{ for osp in open_source_projects }
+\textbf{\VAR{ osp.name | escape_latex }} | \VAR{ osp.type | escape_latex }\\
+\BLOCK{ if osp.links.documentation }\href{\VAR{ osp.links.documentation | visible_url }}{\url{\VAR{ osp.links.documentation | visible_url }}}\BLOCK{ endif }
+\BLOCK{ if osp.links.github } | \href{\VAR{ osp.links.github | visible_url }}{\url{\VAR{ osp.links.github | visible_url }}}\BLOCK{ endif }
+\begin{itemize}
+  \BLOCK{ for point in osp.highlights[:4] }
+  \item \VAR{ point | escape_latex }
+  \BLOCK{ endfor }
+\end{itemize}
+\BLOCK{ endfor }
+\BLOCK{ endif }
+
+%------ PROJECTS ------
+\section*{Projects}
+\sectionrule \\
+\BLOCK{ for proj in projects[:5] }
+\textbf{\VAR{ proj.name | escape_latex }}
+\BLOCK{ if proj.live_link } -- \href{\VAR{ proj.live_link | visible_url }}{\url{\VAR{ proj.live_link | visible_url }}}\BLOCK{ endif }\\
+\BLOCK{ if proj.tech_stack }\textbf{Stack:} \BLOCK{ for item in proj.tech_stack }\VAR{ item | escape_latex }\BLOCK{ if not loop.last }, \BLOCK{ endif }\BLOCK{ endfor }\BLOCK{ endif }
+\begin{itemize}
+  \BLOCK{ for point in proj.highlights[:4] }
+  \item \VAR{ point | escape_latex }
+  \BLOCK{ endfor }
+\end{itemize}
+\BLOCK{ endfor }
+
+%------ EDUCATION ------
+\section*{Education}
+\sectionrule \\
+\BLOCK{ for edu in education }
+\textbf{\VAR{ edu.degree | escape_latex }} -- \VAR{ edu.institution | escape_latex }
+\BLOCK{ if edu.duration } \hfill \VAR{ edu.duration | escape_latex }\BLOCK{ endif }
+\BLOCK{ if edu.status }\\\VAR{ edu.status | escape_latex }\BLOCK{ endif }
+\par\vspace{4pt}
+\BLOCK{ endfor }
+
+%------ CERTIFICATIONS ------
+\BLOCK{ if certifications }
+\section*{Certifications}
+\sectionrule \\
+\begin{itemize}
+  \BLOCK{ for cert in certifications }
+  \item \textbf{\VAR{ cert.name | escape_latex }} -- \VAR{ cert.provider | escape_latex }
+  \BLOCK{ endfor }
+\end{itemize}
+\BLOCK{ endif }
+
+%------ ACHIEVEMENTS ------
+\BLOCK{ if achievement_bank }
+\section*{Achievements}
+\sectionrule \\
+\begin{itemize}
+  \BLOCK{ for ach in achievement_bank[:5] }
+  \item \VAR{ ach.text | escape_latex }
+  \BLOCK{ endfor }
+\end{itemize}
+\BLOCK{ endif }
+
+\end{document}

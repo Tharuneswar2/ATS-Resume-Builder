@@ -1,0 +1,393 @@
+{
+  "basic_info": {
+    "name": "Tharuneswar Doddi",
+    "title": "AI Full Stack Engineer | AI/ML Engineer | Backend & Intelligent Systems Engineer",
+    "email": "tharuneswardoddi@gmail.com",
+    "phone": "+91 6281162655",
+    "location": "India",
+    "links": {
+      "linkedin": "https://linkedin.com/in/tharuneswar-doddi",
+      "github": "https://github.com/Tharuneswar2",
+      "portfolio": "https://tharuneswar2.github.io/",
+      "shortlist_live": "https://shortlist.criativo.ai/",
+      "debugignore_docs": "https://tharuneswar2.github.io/debugignore/"
+    }
+  },
+  "professional_summary": {
+    "experience_years": 1.5,
+    "core_identity": "AI Full Stack Engineer specializing in scalable backend systems, LLM-powered applications, and intelligent AI pipelines",
+    "domains": [
+      "AI/ML Systems",
+      "Backend Engineering",
+      "Distributed Systems",
+      "Computer Vision",
+      "NLP & LLMs",
+      "Developer Tooling",
+      "Event-Driven Architectures",
+      "Vector Search Systems"
+    ],
+    "key_strengths": [
+      "Production-grade AI system deployment",
+      "RAG pipelines & semantic retrieval systems",
+      "High-performance backend API engineering",
+      "Distributed event-driven architectures",
+      "Vector databases & embedding systems",
+      "Runtime tooling & developer infrastructure",
+      "Memory-efficient AI model optimization",
+      "Real-time streaming systems",
+      "Scalable microservice architecture"
+    ],
+    "target_company_alignment": [
+      "FAANG-level backend engineering",
+      "Product-scale distributed systems",
+      "AI infrastructure engineering",
+      "LLM application engineering",
+      "Developer tooling & platform engineering",
+      "Cloud-native backend systems"
+    ]
+  },
+  "skills": {
+    "programming": ["Python", "JavaScript", "Java", "C", "Shell"],
+    "ml_ai": [
+      "PyTorch",
+      "TensorFlow",
+      "Scikit-learn",
+      "Transformers",
+      "Embeddings",
+      "RAG",
+      "Semantic Search",
+      "LLM Fine-Tuning",
+      "Prompt Engineering",
+      "Vector Similarity Search",
+      "Mixed Precision Training (AMP)"
+    ],
+    "backend": [
+      "FastAPI",
+      "REST APIs",
+      "WebSockets",
+      "MQTT",
+      "Async Python",
+      "Event-Driven Systems",
+      "Microservices",
+      "API Optimization"
+    ],
+    "distributed_systems": [
+      "Kafka",
+      "MongoDB Change Streams",
+      "Real-Time Streaming",
+      "Event Processing",
+      "High-Concurrency APIs",
+      "Async Processing"
+    ],
+    "databases": ["MongoDB", "Qdrant", "SQL"],
+    "data_processing": ["NumPy", "Pandas", "Feature Engineering", "Data Preprocessing"],
+    "computer_vision": ["DeepFace", "OpenCV", "OCR Pipelines"],
+    "cloud_devops": [
+      "AWS EC2",
+      "Docker",
+      "Docker Compose",
+      "Kubernetes (Fundamentals)",
+      "Linux",
+      "Nginx",
+      "GitHub Actions",
+      "CI/CD"
+    ],
+    "developer_tooling": [
+      "Monkey Patching",
+      "Import Hooks",
+      "Runtime Hooking",
+      "Python Packaging",
+      "PyPI Publishing",
+      "sys.meta_path",
+      "pytest",
+      "mypy"
+    ],
+    "tools": ["Git", "Postman", "Requestly"],
+    "automation": ["n8n", "UiPath"],
+    "software_engineering": [
+      "OOP",
+      "Data Structures",
+      "Algorithms",
+      "Agile",
+      "System Design Fundamentals",
+      "Scalable Architecture",
+      "Clean Code Practices"
+    ]
+  },
+  "experience": [
+    {
+      "company": "Criativo Software Solutions Pvt Ltd",
+      "role": "AI Full Stack Engineer",
+      "type": "Full-time",
+      "responsibilities": [
+        "Designed scalable AI backend systems using FastAPI and Python",
+        "Built high-concurrency ML inference APIs",
+        "Developed embedding generation, semantic search, and evaluation services",
+        "Integrated AI models into production backend systems",
+        "Handled AWS deployment orchestration and backend automation",
+        "Performed API testing and validation using Postman and Requestly",
+        "Participated in architecture discussions and Agile workflows"
+      ],
+      "impact": [
+        {
+          "area": "Performance",
+          "achievement": "Improved API response time by 30%",
+          "method": "Query optimization and async processing"
+        },
+        {
+          "area": "Scalability",
+          "achievement": "Built high-concurrency inference APIs",
+          "method": "Async FastAPI backend architecture"
+        }
+      ],
+      "tech_stack": ["FastAPI", "Python", "MongoDB", "AWS", "Docker"],
+      "faang_alignment": [
+        "Backend scalability",
+        "Production API engineering",
+        "Distributed backend systems",
+        "Performance optimization"
+      ]
+    },
+    {
+      "company": "ULearn",
+      "role": "AI & Machine Learning Intern",
+      "type": "Internship",
+      "responsibilities": [
+        "Implemented ML models using TensorFlow and Scikit-learn",
+        "Performed data preprocessing and feature engineering",
+        "Built classification and regression pipelines",
+        "Evaluated ML systems using standard metrics"
+      ],
+      "impact": [
+        {
+          "area": "Performance",
+          "achievement": "Achieved A+ rating",
+          "method": "Optimized ML implementations"
+        }
+      ],
+      "tech_stack": ["TensorFlow", "Scikit-learn", "Python"]
+    }
+  ],
+  "open_source_projects": [
+    {
+      "name": "debugignore",
+      "type": "Python Runtime Policy Engine",
+      "links": {
+        "documentation": "https://tharuneswar2.github.io/debugignore/"
+      },
+      "highlights": [
+        "Designed and developed an open-source runtime policy engine inspired by .gitignore",
+        "Enabled suppression of debugging/runtime side effects without modifying application code",
+        "Implemented runtime monkey patching with restoration support",
+        "Built import-hook based runtime interception using sys.meta_path",
+        "Added environment-aware runtime policies",
+        "Published on PyPI with semantic versioning and automated packaging workflows"
+      ],
+      "core_engineering_concepts": [
+        "Runtime Hooking",
+        "Import Interception",
+        "Monkey Patching",
+        "Developer Tooling",
+        "Python Runtime Internals"
+      ],
+      "tech_stack": ["Python", "sys.meta_path", "pytest", "mypy", "GitHub Actions", "PyPI"],
+      "target_company_alignment": [
+        "Platform Engineering",
+        "Developer Infrastructure",
+        "Systems Engineering",
+        "Language Runtime Tooling"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Shortlist / Abhyas Interview Lab",
+      "category": ["AI Platform", "Distributed Systems", "LLM Applications"],
+      "live_link": "https://shortlist.criativo.ai/",
+      "highlights": [
+        "Built AI-powered interview evaluation platform using Angular, Node.js, FastAPI, Kafka, and Docker Compose",
+        "Engineered Kafka-based evaluation pipeline for interview event processing",
+        "Integrated Google Gemini for automated candidate scoring and structured feedback generation",
+        "Built scalable microservices for interview APIs, evaluation systems, admin dashboards, and certificate generation",
+        "Implemented reliable at-least-once Kafka message processing with manual offset commits",
+        "Integrated MongoDB-backed interview storage and audio processing workflows"
+      ],
+      "tech_stack": ["Angular", "Node.js", "Express", "FastAPI", "Kafka", "MongoDB", "Docker Compose", "Google Gemini"],
+      "faang_alignment": [
+        "Distributed systems",
+        "Microservices",
+        "Streaming architectures",
+        "LLM application engineering",
+        "Backend scalability"
+      ]
+    },
+    {
+      "name": "GPT-Style Transformer Model From Scratch",
+      "category": ["LLM", "Deep Learning", "NLP"],
+      "highlights": [
+        "Built transformer-based LLM from scratch using PyTorch",
+        "Implemented custom tokenizer and instruction fine-tuning pipeline",
+        "Reduced GPU memory usage by 35% using mixed precision training (AMP)",
+        "Designed scalable training loop architecture for experimentation"
+      ],
+      "tech_stack": ["PyTorch"],
+      "faang_alignment": ["Deep learning systems", "LLM engineering", "Model optimization", "Training infrastructure"]
+    },
+    {
+      "name": "Face Recognition & Clustering Platform (CampusVibe)",
+      "category": ["Computer Vision", "Vector Search", "AI Infrastructure"],
+      "highlights": [
+        "Built production-ready face recognition system",
+        "Implemented embedding generation and vector similarity search",
+        "Designed clustering workflows for identity grouping",
+        "Handled bulk ingestion and high-concurrency APIs"
+      ],
+      "tech_stack": ["FastAPI", "MongoDB", "Qdrant", "DeepFace", "Docker"],
+      "faang_alignment": ["Vector databases", "Scalable AI systems", "High-concurrency backend engineering"]
+    },
+    {
+      "name": "Financial RAG Agent",
+      "category": ["LLM", "RAG", "Semantic Search"],
+      "highlights": [
+        "Designed semantic retrieval architecture using embeddings and vector databases",
+        "Built document ingestion and indexing pipeline",
+        "Enabled contextual financial QA using AI reasoning"
+      ],
+      "tech_stack": ["MongoDB", "Qdrant"],
+      "faang_alignment": ["Retrieval systems", "LLM infrastructure", "AI search systems"]
+    },
+    {
+      "name": "Structured OCR Invoice Extraction",
+      "category": ["Document AI", "Computer Vision"],
+      "highlights": [
+        "Built transformer-based OCR extraction pipeline",
+        "Optimized preprocessing for memory-efficient inference",
+        "Generated structured JSON outputs for downstream analytics"
+      ],
+      "faang_alignment": ["Document AI", "ML optimization", "Production inference systems"]
+    },
+    {
+      "name": "ML Predictive Analytics Pipeline",
+      "category": ["Machine Learning", "Predictive Systems"],
+      "highlights": [
+        "Built classification and regression systems",
+        "Improved prediction accuracy by 18%",
+        "Automated preprocessing and feature engineering",
+        "Deployed real-time inference APIs"
+      ],
+      "tech_stack": ["Scikit-learn", "FastAPI"]
+    },
+    {
+      "name": "Real-Time Chat & Event Streaming Platform",
+      "category": ["Distributed Systems", "Real-Time Infrastructure"],
+      "highlights": [
+        "Built WebSocket-based real-time messaging backend",
+        "Designed MQTT-based event streaming architecture",
+        "Integrated MongoDB change streams for real-time updates"
+      ],
+      "faang_alignment": [
+        "Streaming systems",
+        "Distributed event architectures",
+        "Real-time backend engineering"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "MCA",
+      "institution": "Aditya PG College",
+      "status": "Pursuing"
+    },
+    {
+      "degree": "MCsAiR",
+      "institution": "Aditya Degree College",
+      "duration": "2022-2025"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Python Essentials",
+      "provider": "Cisco"
+    },
+    {
+      "name": "Competitive Coding",
+      "provider": "Criativo E-Learning"
+    },
+    {
+      "name": "Ethical Hacking",
+      "provider": "Infosys Springboard"
+    },
+    {
+      "name": "Building RAG Agents with LLMs",
+      "provider": "NVIDIA"
+    }
+  ],
+  "awards": ["1st Place - Robo Race 2K23"],
+  "achievement_bank": [
+    {
+      "tags": ["performance", "backend"],
+      "text": "Improved API performance by 30% using async processing and query optimization"
+    },
+    {
+      "tags": ["ml", "optimization"],
+      "text": "Reduced GPU memory usage by 35% using mixed precision training"
+    },
+    {
+      "tags": ["ml", "accuracy"],
+      "text": "Improved prediction accuracy by 18% through feature engineering and evaluation optimization"
+    },
+    {
+      "tags": ["distributed-systems", "streaming"],
+      "text": "Built event-driven real-time architectures using MQTT, Kafka, and MongoDB change streams"
+    },
+    {
+      "tags": ["ai", "rag"],
+      "text": "Built semantic retrieval systems using embeddings, vector databases, and contextual AI reasoning"
+    }
+  ],
+  "preferences": {
+    "target_roles": [
+      "AI Engineer",
+      "Backend Engineer",
+      "AI Full Stack Engineer",
+      "Machine Learning Engineer",
+      "Platform Engineer",
+      "Distributed Systems Engineer",
+      "LLM Engineer"
+    ],
+    "work_type": ["Remote", "Hybrid"],
+    "industries": ["AI", "SaaS", "Fintech", "DeepTech", "Developer Tools", "Cloud Infrastructure"],
+    "target_companies": [
+      "Google",
+      "Meta",
+      "Amazon",
+      "Microsoft",
+      "Apple",
+      "Netflix",
+      "OpenAI",
+      "Anthropic",
+      "NVIDIA",
+      "Databricks",
+      "Snowflake",
+      "Palantir",
+      "Scale AI",
+      "Perplexity",
+      "Hugging Face",
+      "DeepMind",
+      "Mistral AI",
+      "Cohere"
+    ]
+  },
+  "writing_style": {
+    "tone": "professional",
+    "style": "impact-driven",
+    "rules": [
+      "Always include measurable impact",
+      "Avoid generic statements",
+      "Focus on distributed systems and scalability",
+      "Highlight backend engineering depth",
+      "Emphasize production-grade AI systems",
+      "Prioritize measurable technical contributions"
+    ]
+  }
+}
