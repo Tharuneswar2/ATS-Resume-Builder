@@ -8,10 +8,11 @@ import logging
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
 from app.core.config import settings
 from app.core.database import connect_to_mongo, close_mongo_connection
-from app.api import profiles, resumes, jd
+from app.api import profiles, resumes, jd, auth
 
 logging.basicConfig(
     level=logging.INFO,
@@ -32,8 +33,6 @@ async def lifespan(app: FastAPI):
     logger.info("Shutdown complete.")
 
 
-from fastapi.middleware.cors import CORSMiddleware
-
 # ---------------------------------------------------------------------------
 # App factory
 # ---------------------------------------------------------------------------
@@ -44,15 +43,18 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
+# CORS must allow credentials for HttpOnly cookies to work
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"], # For development, allow all origins
+    allow_origins=[settings.FRONTEND_URL],
+    allow_origin_regex=r"^https?://(localhost|127\.0\.0\.1)(:\d+)?$",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
 # Mount routers
+app.include_router(auth.router, prefix=f"{settings.API_V1_STR}/auth", tags=["Authentication"])
 app.include_router(profiles.router, prefix=f"{settings.API_V1_STR}/profiles", tags=["Profiles"])
 app.include_router(resumes.router, prefix=f"{settings.API_V1_STR}/resume", tags=["Resume"])
 app.include_router(jd.router, prefix=f"{settings.API_V1_STR}/jd", tags=["Job Description"])

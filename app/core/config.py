@@ -25,6 +25,15 @@ class Settings(BaseSettings):
     # ── AI / NVIDIA ───────────────────────────────────────────────────────
     NVIDIA_API_KEY: Optional[str] = None
 
+    # ── JWT / Auth ────────────────────────────────────────────────────────
+    JWT_SECRET_KEY: str = "CHANGE_ME_IN_PRODUCTION"
+    JWT_REFRESH_SECRET_KEY: str = "CHANGE_ME_IN_PRODUCTION_REFRESH"
+    ACCESS_TOKEN_EXPIRE_MINUTES: int = 15
+    REFRESH_TOKEN_EXPIRE_DAYS: int = 7
+
+    # ── CORS ──────────────────────────────────────────────────────────────
+    FRONTEND_URL: str = "http://localhost:5173"
+
     model_config = SettingsConfigDict(
         env_file=".env",
         env_file_encoding="utf-8",

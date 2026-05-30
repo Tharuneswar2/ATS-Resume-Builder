@@ -22,8 +22,10 @@ class ProfileRepository:
         except (InvalidId, TypeError):
             return None
 
-    async def create_profile(self, profile_data: ProfileCreate) -> Dict[str, Any]:
+    async def create_profile(self, profile_data: ProfileCreate, user_id: str) -> Dict[str, Any]:
+        """Create a profile document owned by the given user."""
         document = profile_data.model_dump()
+        document["user_id"] = user_id  # Ownership field
         result = await self.collection.insert_one(document)
         document["_id"] = str(result.inserted_id)
         return document
@@ -54,8 +56,9 @@ class ProfileRepository:
             result["_id"] = str(result["_id"])
         return result
 
-    async def list_profiles(self, limit: int = 10, skip: int = 0) -> List[Dict[str, Any]]:
-        cursor = self.collection.find().skip(skip).limit(limit)
+    async def list_profiles(self, user_id: str, limit: int = 10, skip: int = 0) -> List[Dict[str, Any]]:
+        """List profiles filtered by the owning user_id."""
+        cursor = self.collection.find({"user_id": user_id}).skip(skip).limit(limit)
         documents = []
         async for doc in cursor:
             doc["_id"] = str(doc["_id"])
